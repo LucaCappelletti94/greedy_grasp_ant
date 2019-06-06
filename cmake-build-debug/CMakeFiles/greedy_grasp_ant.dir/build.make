@@ -57,30 +57,135 @@ include CMakeFiles/greedy_grasp_ant.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/greedy_grasp_ant.dir/flags.make
 
-CMakeFiles/greedy_grasp_ant.dir/main.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
-CMakeFiles/greedy_grasp_ant.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/greedy_grasp_ant.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/main.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/main.c
+CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o: ../src/alloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.c
 
-CMakeFiles/greedy_grasp_ant.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/main.c > CMakeFiles/greedy_grasp_ant.dir/main.c.i
+CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.c > CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.i
 
-CMakeFiles/greedy_grasp_ant.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/main.c -o CMakeFiles/greedy_grasp_ant.dir/main.c.s
+CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.c -o CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.s
+
+CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: ../src/data.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/data.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/data.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/data.c
+
+CMakeFiles/greedy_grasp_ant.dir/src/data.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/data.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/data.c > CMakeFiles/greedy_grasp_ant.dir/src/data.c.i
+
+CMakeFiles/greedy_grasp_ant.dir/src/data.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/data.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/data.c -o CMakeFiles/greedy_grasp_ant.dir/src/data.c.s
+
+CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/greedy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.c
+
+CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.c > CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.i
+
+CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.c -o CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.s
+
+CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/main_greedy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/main_greedy.c
+
+CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/main_greedy.c > CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.i
+
+CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/main_greedy.c -o CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.s
+
+CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o: ../src/partition.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/partition.c
+
+CMakeFiles/greedy_grasp_ant.dir/src/partition.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/partition.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/partition.c > CMakeFiles/greedy_grasp_ant.dir/src/partition.c.i
+
+CMakeFiles/greedy_grasp_ant.dir/src/partition.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/partition.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/partition.c -o CMakeFiles/greedy_grasp_ant.dir/src/partition.c.s
+
+CMakeFiles/greedy_grasp_ant.dir/src/random.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/random.c.o: ../src/random.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/random.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/random.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/random.c
+
+CMakeFiles/greedy_grasp_ant.dir/src/random.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/random.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/random.c > CMakeFiles/greedy_grasp_ant.dir/src/random.c.i
+
+CMakeFiles/greedy_grasp_ant.dir/src/random.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/random.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/random.c -o CMakeFiles/greedy_grasp_ant.dir/src/random.c.s
+
+CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/semigreedy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.c
+
+CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.c > CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.i
+
+CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.c -o CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.s
+
+CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o: CMakeFiles/greedy_grasp_ant.dir/flags.make
+CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o: ../src/solution.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o   -c /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.c
+
+CMakeFiles/greedy_grasp_ant.dir/src/solution.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/greedy_grasp_ant.dir/src/solution.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.c > CMakeFiles/greedy_grasp_ant.dir/src/solution.c.i
+
+CMakeFiles/greedy_grasp_ant.dir/src/solution.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/greedy_grasp_ant.dir/src/solution.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.c -o CMakeFiles/greedy_grasp_ant.dir/src/solution.c.s
 
 # Object files for target greedy_grasp_ant
 greedy_grasp_ant_OBJECTS = \
-"CMakeFiles/greedy_grasp_ant.dir/main.c.o"
+"CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o" \
+"CMakeFiles/greedy_grasp_ant.dir/src/data.c.o" \
+"CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o" \
+"CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o" \
+"CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o" \
+"CMakeFiles/greedy_grasp_ant.dir/src/random.c.o" \
+"CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o" \
+"CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o"
 
 # External object files for target greedy_grasp_ant
 greedy_grasp_ant_EXTERNAL_OBJECTS =
 
-greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/main.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/data.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/random.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o
+greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o
 greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/build.make
 greedy_grasp_ant: CMakeFiles/greedy_grasp_ant.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable greedy_grasp_ant"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable greedy_grasp_ant"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/greedy_grasp_ant.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,3 +1,4 @@
+#include <limits.h>
 #include "partition.h"
 
 void Scambia (int *pa, int *pb)

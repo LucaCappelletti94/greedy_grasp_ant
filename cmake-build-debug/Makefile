@@ -123,32 +123,221 @@ greedy_grasp_ant/fast:
 	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/build
 .PHONY : greedy_grasp_ant/fast
 
-main.o: main.c.o
+src/alloc.o: src/alloc.c.o
 
-.PHONY : main.o
+.PHONY : src/alloc.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/main.c.o
-.PHONY : main.c.o
+src/alloc.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o
+.PHONY : src/alloc.c.o
 
-main.i: main.c.i
+src/alloc.i: src/alloc.c.i
 
-.PHONY : main.i
+.PHONY : src/alloc.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/main.c.i
-.PHONY : main.c.i
+src/alloc.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.i
+.PHONY : src/alloc.c.i
 
-main.s: main.c.s
+src/alloc.s: src/alloc.c.s
 
-.PHONY : main.s
+.PHONY : src/alloc.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/main.c.s
-.PHONY : main.c.s
+src/alloc.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.s
+.PHONY : src/alloc.c.s
+
+src/data.o: src/data.c.o
+
+.PHONY : src/data.o
+
+# target to build an object file
+src/data.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/data.c.o
+.PHONY : src/data.c.o
+
+src/data.i: src/data.c.i
+
+.PHONY : src/data.i
+
+# target to preprocess a source file
+src/data.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/data.c.i
+.PHONY : src/data.c.i
+
+src/data.s: src/data.c.s
+
+.PHONY : src/data.s
+
+# target to generate assembly for a file
+src/data.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/data.c.s
+.PHONY : src/data.c.s
+
+src/greedy.o: src/greedy.c.o
+
+.PHONY : src/greedy.o
+
+# target to build an object file
+src/greedy.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o
+.PHONY : src/greedy.c.o
+
+src/greedy.i: src/greedy.c.i
+
+.PHONY : src/greedy.i
+
+# target to preprocess a source file
+src/greedy.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.i
+.PHONY : src/greedy.c.i
+
+src/greedy.s: src/greedy.c.s
+
+.PHONY : src/greedy.s
+
+# target to generate assembly for a file
+src/greedy.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.s
+.PHONY : src/greedy.c.s
+
+src/main_greedy.o: src/main_greedy.c.o
+
+.PHONY : src/main_greedy.o
+
+# target to build an object file
+src/main_greedy.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o
+.PHONY : src/main_greedy.c.o
+
+src/main_greedy.i: src/main_greedy.c.i
+
+.PHONY : src/main_greedy.i
+
+# target to preprocess a source file
+src/main_greedy.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.i
+.PHONY : src/main_greedy.c.i
+
+src/main_greedy.s: src/main_greedy.c.s
+
+.PHONY : src/main_greedy.s
+
+# target to generate assembly for a file
+src/main_greedy.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.s
+.PHONY : src/main_greedy.c.s
+
+src/partition.o: src/partition.c.o
+
+.PHONY : src/partition.o
+
+# target to build an object file
+src/partition.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o
+.PHONY : src/partition.c.o
+
+src/partition.i: src/partition.c.i
+
+.PHONY : src/partition.i
+
+# target to preprocess a source file
+src/partition.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/partition.c.i
+.PHONY : src/partition.c.i
+
+src/partition.s: src/partition.c.s
+
+.PHONY : src/partition.s
+
+# target to generate assembly for a file
+src/partition.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/partition.c.s
+.PHONY : src/partition.c.s
+
+src/random.o: src/random.c.o
+
+.PHONY : src/random.o
+
+# target to build an object file
+src/random.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/random.c.o
+.PHONY : src/random.c.o
+
+src/random.i: src/random.c.i
+
+.PHONY : src/random.i
+
+# target to preprocess a source file
+src/random.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/random.c.i
+.PHONY : src/random.c.i
+
+src/random.s: src/random.c.s
+
+.PHONY : src/random.s
+
+# target to generate assembly for a file
+src/random.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/random.c.s
+.PHONY : src/random.c.s
+
+src/semigreedy.o: src/semigreedy.c.o
+
+.PHONY : src/semigreedy.o
+
+# target to build an object file
+src/semigreedy.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o
+.PHONY : src/semigreedy.c.o
+
+src/semigreedy.i: src/semigreedy.c.i
+
+.PHONY : src/semigreedy.i
+
+# target to preprocess a source file
+src/semigreedy.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.i
+.PHONY : src/semigreedy.c.i
+
+src/semigreedy.s: src/semigreedy.c.s
+
+.PHONY : src/semigreedy.s
+
+# target to generate assembly for a file
+src/semigreedy.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.s
+.PHONY : src/semigreedy.c.s
+
+src/solution.o: src/solution.c.o
+
+.PHONY : src/solution.o
+
+# target to build an object file
+src/solution.c.o:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o
+.PHONY : src/solution.c.o
+
+src/solution.i: src/solution.c.i
+
+.PHONY : src/solution.i
+
+# target to preprocess a source file
+src/solution.c.i:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/solution.c.i
+.PHONY : src/solution.c.i
+
+src/solution.s: src/solution.c.s
+
+.PHONY : src/solution.s
+
+# target to generate assembly for a file
+src/solution.c.s:
+	$(MAKE) -f CMakeFiles/greedy_grasp_ant.dir/build.make CMakeFiles/greedy_grasp_ant.dir/src/solution.c.s
+.PHONY : src/solution.c.s
 
 # Help Target
 help:
@@ -159,9 +348,30 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... greedy_grasp_ant"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/alloc.o"
+	@echo "... src/alloc.i"
+	@echo "... src/alloc.s"
+	@echo "... src/data.o"
+	@echo "... src/data.i"
+	@echo "... src/data.s"
+	@echo "... src/greedy.o"
+	@echo "... src/greedy.i"
+	@echo "... src/greedy.s"
+	@echo "... src/main_greedy.o"
+	@echo "... src/main_greedy.i"
+	@echo "... src/main_greedy.s"
+	@echo "... src/partition.o"
+	@echo "... src/partition.i"
+	@echo "... src/partition.s"
+	@echo "... src/random.o"
+	@echo "... src/random.i"
+	@echo "... src/random.s"
+	@echo "... src/semigreedy.o"
+	@echo "... src/semigreedy.i"
+	@echo "... src/semigreedy.s"
+	@echo "... src/solution.o"
+	@echo "... src/solution.i"
+	@echo "... src/solution.s"
 .PHONY : help
 
 

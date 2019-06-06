@@ -24,10 +24,10 @@ int best_random_additional_point (solution_t *px, data_t *pI, double alpha, long
     ind[tot] = i;
   }
 
-  // Riordina d e ind portando in testa i valori piu' grandi
+  // Riordinare d e ind portando in testa i valori piu' grandi
   num = partition_by_value(tot,d,ind,alpha);
 
-  // Sceglie uno dei candidati
+  // Scegliere uno dei candidati
   i_max = ind[rand_int(1,num,pidum)];
 
   free(d);
@@ -37,11 +37,22 @@ int best_random_additional_point (solution_t *px, data_t *pI, double alpha, long
 
 void semigreedy (data_t *pI, solution_t *px, double alpha, int iterTot, long *pidum)
 {
-  int i;
+  int i, iter;
+  solution_t xCurr;
 
-  while (px->card_x < pI->k)
+  create_solution(pI->n,&xCurr);
+  copy_solution(px,&xCurr);
+  for (iter = 1; iter <= iterTot; iter++)
   {
-    i = best_random_additional_point(px,pI,alpha,pidum);
-    move_point_in(i,px,pI);
+    while (xCurr.card_x < pI->k)
+    {
+      i = best_random_additional_point(&xCurr,pI,alpha,pidum);
+      move_point_in(i,&xCurr,pI);
+    }
+    print_solution(&xCurr);
+    printf("\n");
+    if (xCurr.f  > px->f) copy_solution(&xCurr,px);
+    clean_solution(&xCurr);
   }
+  destroy_solution(&xCurr);
 }

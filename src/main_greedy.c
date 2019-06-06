@@ -3,7 +3,7 @@
 #include <time.h>
 
 #include "greedy.h"
-#include "localsearch.h"
+#include "semigreedy.h"
 
 
 void parse_command_line (int argc, char *argv[], char *data_file, char *param, double *palpha, int *piterTot, long *pseme);
@@ -43,8 +43,8 @@ int main (int argc, char *argv[])
   fine = clock();
   tempo = (double) (fine - inizio) / CLOCKS_PER_SEC;
 
-  printf("%s ",data_file);
-  printf("%10.6lf ",tempo);
+  printf("Data file: %s\n",data_file);
+  printf("Required time: %10.6lf ms\n",tempo*1000);
   print_solution(&x);
   printf("\n");
 

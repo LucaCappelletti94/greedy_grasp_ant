@@ -3,4 +3,5 @@ project(greedy_grasp_ant C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(greedy_grasp_ant main.c)
+file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/*.c")
+add_executable(greedy_grasp_ant ${SOURCES})

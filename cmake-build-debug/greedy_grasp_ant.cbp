@@ -78,7 +78,49 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/main.c">
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.h">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/data.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/data.h">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/main_greedy.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/partition.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/partition.h">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/random.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/random.h">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.h">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.c">
+			<Option target="greedy_grasp_ant"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h">
 			<Option target="greedy_grasp_ant"/>
 		</Unit>
 		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/CMakeLists.txt">

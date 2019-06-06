@@ -4,7 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lucacappelletti/github/greedy_grasp_ant/main.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/main.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/data.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/data.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/main_greedy.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/partition.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/random.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/random.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o"
+  "/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.c" "/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug/CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
