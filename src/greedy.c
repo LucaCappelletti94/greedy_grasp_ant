@@ -49,6 +49,8 @@ int best_initial_point (data_t *pI)
   return i_max;
 }
 
+// Determines the distance of the new point from the ones already in the solution as the sum of all the distances.
+// Since this sum is then compared to other sums from the same solution, there's no need to divide it by the number of points.
 int dist_from_solution (int i, solution_t *px, data_t *pI)
 {
   point q;
@@ -86,9 +88,12 @@ int best_additional_point (solution_t *px, data_t *pI)
 void greedy (data_t *pI, solution_t *px)
 {
   int i;
-
+  // While the current solution cardinality is less than the maximum allowed
+  // as specified in the input file.
   while (px->card_x < pI->k)
   {
+    // Determine the new best additional point following the current algorithm score function
+    // For greedy, by definition, the best one available is always selected.
     i = best_additional_point(px,pI);
     move_point_in(i,px,pI);
   }

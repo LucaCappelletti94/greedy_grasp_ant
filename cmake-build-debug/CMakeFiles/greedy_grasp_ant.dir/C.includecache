@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.c
+alloc.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.h
+
 /Users/lucacappelletti/github/greedy_grasp_ant/src/alloc.h
 stdio.h
 -
@@ -13,6 +17,10 @@ stdlib.h
 -
 defs.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/defs.h
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/data.c
+data.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/data.h
 
 /Users/lucacappelletti/github/greedy_grasp_ant/src/data.h
 defs.h
@@ -27,6 +35,10 @@ stdlib.h
 -
 string.h
 -
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.c
+greedy.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h
 
 /Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h
 data.h
@@ -46,9 +58,39 @@ greedy.h
 semigreedy.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.h
 
+/Users/lucacappelletti/github/greedy_grasp_ant/src/partition.c
+limits.h
+-
+partition.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/partition.h
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/partition.h
+stdio.h
+-
+stdlib.h
+-
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/random.c
+random.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/random.h
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/random.h
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.c
+greedy.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h
+random.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/random.h
+partition.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/partition.h
+
 /Users/lucacappelletti/github/greedy_grasp_ant/src/semigreedy.h
 greedy.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.c
+solution.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
 
 /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
 data.h
