@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.13)
 project(greedy_grasp_ant C)
 
 set(CMAKE_C_STANDARD 99)
-
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/externals/cmake-codecov/cmake" ${CMAKE_MODULE_PATH})
+SET(GCC_COVERAGE_COMPILE_FLAGS "-g -O0 -coverage -fprofile-arcs -ftest-coverage")
+SET(GCC_COVERAGE_LINK_FLAGS    "-coverage -lgcov")
+find_package(codecov)
 file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "src/*.c")
 add_executable(greedy_grasp_ant ${SOURCES})

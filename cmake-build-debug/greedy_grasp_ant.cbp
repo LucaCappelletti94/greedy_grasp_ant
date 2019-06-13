@@ -5,7 +5,7 @@
 		<Option title="greedy_grasp_ant"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\externals\;CMake Files\externals\cmake-codecov\;CMake Files\externals\cmake-codecov\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/lucacappelletti/github/greedy_grasp_ant/cmake-build-debug"/>
@@ -125,6 +125,9 @@
 		</Unit>
 		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/lucacappelletti/github/greedy_grasp_ant/externals/cmake-codecov/cmake/Findcodecov.cmake">
+			<Option virtualFolder="CMake Files\externals\cmake-codecov\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
