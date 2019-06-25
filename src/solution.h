@@ -89,4 +89,6 @@ bool check_solution (solution_t *px, data_t *pI);
 // Stampa la soluzione puntata da *px
 void print_solution (solution_t *px);
 
+int solution_around_cardinality(solution_t *px);
+
 #endif /* __SOLUTION_H */

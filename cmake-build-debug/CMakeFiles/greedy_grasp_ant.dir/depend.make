@@ -10,39 +10,55 @@ CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: ../src/data.c
 CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: ../src/data.h
 CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: ../src/defs.h
 
+CMakeFiles/greedy_grasp_ant.dir/src/distances.c.o: ../src/alloc.h
+CMakeFiles/greedy_grasp_ant.dir/src/distances.c.o: ../src/data.h
+CMakeFiles/greedy_grasp_ant.dir/src/distances.c.o: ../src/defs.h
+CMakeFiles/greedy_grasp_ant.dir/src/distances.c.o: ../src/distances.c
+CMakeFiles/greedy_grasp_ant.dir/src/distances.c.o: ../src/distances.h
+CMakeFiles/greedy_grasp_ant.dir/src/distances.c.o: ../src/solution.h
+CMakeFiles/greedy_grasp_ant.dir/src/distances.c.o: ../src/utils.h
+
+CMakeFiles/greedy_grasp_ant.dir/src/distributions.c.o: ../src/alloc.h
+CMakeFiles/greedy_grasp_ant.dir/src/distributions.c.o: ../src/data.h
+CMakeFiles/greedy_grasp_ant.dir/src/distributions.c.o: ../src/defs.h
+CMakeFiles/greedy_grasp_ant.dir/src/distributions.c.o: ../src/distances.h
+CMakeFiles/greedy_grasp_ant.dir/src/distributions.c.o: ../src/distributions.c
+CMakeFiles/greedy_grasp_ant.dir/src/distributions.c.o: ../src/distributions.h
+CMakeFiles/greedy_grasp_ant.dir/src/distributions.c.o: ../src/solution.h
+
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/alloc.h
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/data.h
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/defs.h
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/distances.h
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/distributions.h
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/grasp.c
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/grasp.h
+CMakeFiles/greedy_grasp_ant.dir/src/grasp.c.o: ../src/solution.h
+
 CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/alloc.h
 CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/data.h
 CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/defs.h
+CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/distances.h
 CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/greedy.c
 CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/greedy.h
 CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/solution.h
 
-CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/alloc.h
-CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/data.h
-CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/defs.h
-CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/greedy.h
-CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/main_greedy.c
-CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/semigreedy.h
-CMakeFiles/greedy_grasp_ant.dir/src/main_greedy.c.o: ../src/solution.h
-
-CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o: ../src/partition.c
-CMakeFiles/greedy_grasp_ant.dir/src/partition.c.o: ../src/partition.h
-
-CMakeFiles/greedy_grasp_ant.dir/src/random.c.o: ../src/random.c
-CMakeFiles/greedy_grasp_ant.dir/src/random.c.o: ../src/random.h
-
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/alloc.h
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/data.h
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/defs.h
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/greedy.h
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/partition.h
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/random.h
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/semigreedy.c
-CMakeFiles/greedy_grasp_ant.dir/src/semigreedy.c.o: ../src/solution.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/alloc.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/data.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/defs.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/distances.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/distributions.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/grasp.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/greedy.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/main.c
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/solution.h
 
 CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o: ../src/alloc.h
 CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o: ../src/data.h
 CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o: ../src/defs.h
 CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o: ../src/solution.c
 CMakeFiles/greedy_grasp_ant.dir/src/solution.c.o: ../src/solution.h
+
+CMakeFiles/greedy_grasp_ant.dir/src/utils.c.o: ../src/utils.c
+CMakeFiles/greedy_grasp_ant.dir/src/utils.c.o: ../src/utils.h
 

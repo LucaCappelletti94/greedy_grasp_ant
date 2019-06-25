@@ -1,6 +1,5 @@
 #include "greedy.h"
 
-
 void best_initial_pair (data_t *pI, int *pi_in, int *pj_in)
 {
   int i, j;
@@ -18,72 +17,39 @@ void best_initial_pair (data_t *pI, int *pi_in, int *pj_in)
       }
 }
 
-int dist_tot (int i, data_t *pI)
+int idxmax(int** distances, size_t size)
 {
-  int j, d;
-
-  d = 0;
-  for (j = 1; j <= pI->n; j++)
-    d += pI->d[i][j];
-
-  return d;
+  int max=-1, index;
+  for (int i=0; i<size; i++)
+  {
+      if(distances[1][i]>max)
+      {
+        max = distances[1][i];
+        index = distances[0][i];
+      }
+  }
+  return index;
 }
 
 int best_initial_point (data_t *pI)
 {
-  int i, i_max;
-  int d, d_max;
-
-  d_max = -1;
-  i_max = -1;
-  for (i = 1; i <= pI->n; i++)
-  {
-    d = dist_tot(i,pI);
-    if (d > d_max)
-    {
-      i_max = i;
-      d_max = d;
-    }
-  }
-
-  return i_max;
-}
-
-// Determines the distance of the new point from the ones already in the solution as the sum of all the distances.
-// Since this sum is then compared to other sums from the same solution, there's no need to divide it by the number of points.
-int dist_from_solution (int i, solution_t *px, data_t *pI)
-{
-  point q;
-  int d;
-
-  d = 0;
-  for (q = first_point_in(px); !end_point_list(q,px); q = next_point(q,px))
-    d += pI->d[i][get_index(q,px)];
-
-  return d;
+  int** distances = initial_distances(pI);
+  int best_point = idxmax(distances, pI->n);
+  destroy_distances(distances);
+  return  best_point;
 }
 
 int best_additional_point (solution_t *px, data_t *pI)
 {
-  point p;
-  int d, d_max;
-  int i, i_max;
-
-  d_max = -1;
-  i_max = NO_POINT;
-  for (p = first_point_out(px); !end_point_list(p,px); p = next_point(p,px))
-  {
-    i = get_index(p,px);
-    d = dist_from_solution(i,px,pI);
-    if (d > d_max)
-    {
-      i_max = i;
-      d_max = d;
-    }
-  }
-
-  return i_max;
+  int n = solution_around_cardinality(px);
+  if(n == 0)
+    return  NO_POINT;
+  int ** distances = additional_distances(px, pI, n);
+  int index = idxmax(distances, n);
+  destroy_distances(distances);
+  return index;
 }
+
 
 void greedy (data_t *pI, solution_t *px)
 {

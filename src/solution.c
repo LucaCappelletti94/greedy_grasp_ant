@@ -276,6 +276,15 @@ void print_solution (solution_t *px)
     printf("%4d ",get_index(p,px));
 }
 
+
+// Determines the number of points around the given solution.
+int solution_around_cardinality(solution_t *px)
+{
+  int n=0;
+  for (point p = first_point_out(px); !end_point_list(p,px); p = next_point(p,px), n++);
+  return n;
+}
+
 /*
 // Copia in un vettore di interi gli elementi che appartengono alla soluzione
 void dump_soluzione(lista_nodi_t *lista_nodi, soluzione_t * soluzione_dest)

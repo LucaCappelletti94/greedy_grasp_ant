@@ -4,6 +4,7 @@
 
 #include "data.h"
 #include "solution.h"
+#include "distances.h"
 
 int dist_from_solution (int i, solution_t *px, data_t *pI);
 
