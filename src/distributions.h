@@ -9,11 +9,12 @@
 #include "math.h"
 #include "distances.h"
 
-int choice(const float* p, size_t n);
-float* uniform(int** distances, size_t n, size_t max);
-float* linear_HBSS(int** distances, size_t n, size_t max);
-float* exponential_HBSS(int** distances, size_t n, size_t max);
-float* linear_RCL(int** distances, size_t n, size_t max);
-float* exponential_RCL(int** distances, size_t n, size_t max);
+int choice(const double* p, size_t n);
+double* uniform(int** distances, size_t n, size_t max);
+double* linear_HBSS(int** distances, size_t n, size_t max);
+double* exponential_HBSS(int** distances, size_t n, size_t max);
+double* linear_RCL(int** distances, size_t n, size_t max);
+double* exponential_RCL(int** distances, size_t n, size_t max);
+int random_index(int** distances, double* distribution, size_t n);
 
 #endif //GREEDY_GRASP_ANT_DISTRIBUTIONS_H

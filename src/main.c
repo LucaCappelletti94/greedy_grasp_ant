@@ -4,6 +4,7 @@
 
 #include "greedy.h"
 #include "grasp.h"
+#include "ant.h"
 
 
 void parse_command_line (int argc, char *argv[], char *data_file, char *param, double *palpha, int *piterTot, long *pseme);
@@ -24,85 +25,92 @@ int main (int argc, char *argv[])
 
   parse_command_line(argc,argv,data_file,param,&alpha,&iterTot,&seme);
 
+  printf("Data file: %s\n",data_file);
   load_data(data_file,&I);
 
   int cardinality = 10;
-  int seeds = 500;
+  int seeds = 10;
 
+  printf("Scores:\n");
   inizio = clock();
   create_solution(I.n,&x);
   greedy(&I,&x);
-  int greedy_score = x.f;
-  create_solution(I.n,&x);
+  printf("\tGreedy: %d\n", x.f);
+  clean_solution(&x);
   greedy_bestsum(&I,&x);
-  int greedy_bestsum_score = x.f;
-  create_solution(I.n,&x);
+  printf("\tGreedy Bestsum: %d\n", x.f);
+  clean_solution(&x);
   greedy_bestpair(&I,&x);
-  int greedy_bestpair_score = x.f;
-  create_solution(I.n,&x);
+  printf("\tGreedy Bestpair: %d\n", x.f);
+  clean_solution(&x);
   greedy_tryall(&I,&x);
-  int greedy_tryall_score = x.f;
+  printf("\tGreedy Tryall: %d\n", x.f);
 
   float uniform_grasp_score = 0;
   for(int i=0; i<seeds; i++)
   {
     srand(i);
-    create_solution(I.n,&x);
+    clean_solution(&x);
     uniform_grasp(&I,&x);
     uniform_grasp_score+= (float)x.f/(float)seeds;
   }
+  printf("\t[Average] GRASP uniform: %f\n", uniform_grasp_score);
 
   float linear_HBSS_grasp_score = 0;
   for(int i=0; i<seeds; i++)
   {
     srand(i);
-    create_solution(I.n,&x);
+    clean_solution(&x);
     linear_HBSS_grasp(&I,&x);
     linear_HBSS_grasp_score+= (float)x.f/(float)seeds;
   }
+  printf("\t[Average] GRASP linear HBSS: %f\n", linear_HBSS_grasp_score);
 
   float exponential_HBSS_grasp_score = 0;
   for(int i=0; i<seeds; i++)
   {
     srand(i);
-    create_solution(I.n,&x);
+    clean_solution(&x);
     exponential_HBSS_grasp(&I,&x);
     exponential_HBSS_grasp_score+= (float)x.f/(float)seeds;
   }
+  printf("\t[Average] GRASP exponential HBSS: %f\n", exponential_HBSS_grasp_score);
 
   float linear_RCL_grasp_score = 0;
   for(int i=0; i<seeds; i++)
   {
     srand(i);
-    create_solution(I.n,&x);
+    clean_solution(&x);
     linear_RCL_grasp(&I,&x, cardinality);
     linear_RCL_grasp_score+= (float)x.f/(float)seeds;
   }
+  printf("\t[Average] GRASP linear RCL (cardinality %d): %f\n", cardinality, linear_RCL_grasp_score);
 
   float exponential_RCL_grasp_score = 0;
   for(int i=0; i<seeds; i++)
   {
     srand(i);
-    create_solution(I.n,&x);
+    clean_solution(&x);
     exponential_RCL_grasp(&I,&x, cardinality);
     exponential_RCL_grasp_score+= (float)x.f/(float)seeds;
   }
+  printf("\t[Average] GRASP exponential RCL (cardinality %d): %f\n", cardinality, exponential_RCL_grasp_score);
+
+  float ant_score = 0;
+  for(int i=0; i<seeds; i++)
+  {
+    srand(i);
+    clean_solution(&x);
+    ant_system(&I,&x, 100, 0.1, 2, 15);
+    ant_score+= (float)x.f/(float)seeds;
+  }
+  printf("\t[Average] Ant system: %f\n", ant_score);
 
   fine = clock();
   tempo = (double) (fine - inizio) / CLOCKS_PER_SEC;
 
-  printf("Data file: %s\n",data_file);
   printf("Required time: %10.6lf ms\n",tempo*1000);
-  printf("Scores:\n");
-  printf("\tGreedy: %d\n", greedy_score);
-  printf("\tGreedy Bestsum: %d\n", greedy_bestsum_score);
-  printf("\tGreedy Bestpair: %d\n", greedy_bestpair_score);
-  printf("\tGreedy Tryall: %d\n", greedy_tryall_score);
-  printf("\t[Average] GRASP uniform: %f\n", uniform_grasp_score);
-  printf("\t[Average] GRASP linear HBSS: %f\n", linear_HBSS_grasp_score);
-  printf("\t[Average] GRASP exponential HBSS: %f\n", exponential_HBSS_grasp_score);
-  printf("\t[Average] GRASP linear RCL (cardinality %d): %f\n", cardinality, linear_RCL_grasp_score);
-  printf("\t[Average] GRASP exponential RCL (cardinality %d): %f\n", cardinality, exponential_RCL_grasp_score);
+
   printf("\n");
 
   destroy_solution(&x);

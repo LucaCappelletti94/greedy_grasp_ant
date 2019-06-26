@@ -16,8 +16,8 @@ int** alloc_distances(size_t n)
 
 void destroy_distances(int** distances)
 {
-  for (int i=0; i<2; i++)
-    free(distances[i]);
+  free(distances[0]);
+  free(distances[1]);
   free(distances);
 }
 

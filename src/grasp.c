@@ -4,43 +4,33 @@
 
 #include "grasp.h"
 
-int random_index(int** distances, int n, size_t max, float* (*get_distribution)(int**, size_t, size_t))
+int random_point(int** distances, int n, size_t max, double* (*get_distribution)(int**, size_t, size_t))
 {
-  float* distribution = get_distribution(distances, n, max);
-  int position = choice(distribution, n);
+  double* distribution = get_distribution(distances, n, max);
+  int index = random_index(distances, distribution, n);
   free(distribution);
-  return distances[0][position];
-}
-
-int random_initial_point (data_t *pI, size_t max, float* (*get_distribution)(int**, size_t, size_t))
-{
-  int** distances = initial_distances(pI);
-  int index = random_index(distances, pI->n, max, get_distribution);
-  destroy_distances(distances);
   return index;
 }
 
-int random_additional_point (solution_t *px, data_t *pI, size_t max, float* (*get_distribution)(int**, size_t, size_t))
+int random_additional_point (solution_t *px, data_t *pI, size_t max, double* (*get_distribution)(int**, size_t, size_t))
 {
   int n = solution_around_cardinality(px);
   if(n == 0)
     return  NO_POINT;
   int ** distances = additional_distances(px, pI, n);
-  int index = random_index(distances, n, max, get_distribution);
+  int index = random_point(distances, n, max, get_distribution);
   destroy_distances(distances);
   return index;
 }
 
-void grasp(data_t *pI, solution_t *px, size_t max, float* (*get_distribution)(int**, size_t, size_t))
+void grasp(data_t *pI, solution_t *px, size_t max, double* (*get_distribution)(int**, size_t, size_t))
 {
-  int i;
   // While the current solution cardinality is less than the maximum allowed
   // as specified in the input file.
   while (px->card_x < pI->k)
   {
     // Determine the new best additional point following the current algorithm score function
-    i = random_additional_point(px, pI, max, get_distribution);
-    move_point_in(i,px,pI);
+    move_point_in(random_additional_point(px, pI, max, get_distribution),px,pI);
   }
 }
 

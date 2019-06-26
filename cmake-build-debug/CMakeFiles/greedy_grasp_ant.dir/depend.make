@@ -5,6 +5,15 @@ CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o: ../src/alloc.c
 CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o: ../src/alloc.h
 CMakeFiles/greedy_grasp_ant.dir/src/alloc.c.o: ../src/defs.h
 
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/alloc.h
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/ant.c
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/ant.h
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/data.h
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/defs.h
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/distances.h
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/distributions.h
+CMakeFiles/greedy_grasp_ant.dir/src/ant.c.o: ../src/solution.h
+
 CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: ../src/alloc.h
 CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: ../src/data.c
 CMakeFiles/greedy_grasp_ant.dir/src/data.c.o: ../src/data.h
@@ -44,6 +53,7 @@ CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/greedy.h
 CMakeFiles/greedy_grasp_ant.dir/src/greedy.c.o: ../src/solution.h
 
 CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/alloc.h
+CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/ant.h
 CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/data.h
 CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/defs.h
 CMakeFiles/greedy_grasp_ant.dir/src/main.c.o: ../src/distances.h

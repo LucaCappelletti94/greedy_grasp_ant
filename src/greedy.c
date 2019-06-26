@@ -36,7 +36,7 @@ int best_initial_point (data_t *pI)
   int** distances = initial_distances(pI);
   int best_point = idxmax(distances, pI->n);
   destroy_distances(distances);
-  return  best_point;
+  return best_point;
 }
 
 int best_additional_point (solution_t *px, data_t *pI)

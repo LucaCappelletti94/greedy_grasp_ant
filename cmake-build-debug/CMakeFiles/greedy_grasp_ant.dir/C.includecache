@@ -14,6 +14,14 @@ stdlib.h
 defs.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/defs.h
 
+/Users/lucacappelletti/github/greedy_grasp_ant/src/ant.h
+solution.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
+distributions.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/distributions.h
+math.h
+-
+
 /Users/lucacappelletti/github/greedy_grasp_ant/src/data.h
 defs.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/defs.h
@@ -69,6 +77,8 @@ greedy.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h
 grasp.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/grasp.h
+ant.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/ant.h
 
 /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
 data.h
