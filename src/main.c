@@ -125,8 +125,6 @@ int main (int argc, char *argv[])
   tempo = (double) (fine - inizio) / CLOCKS_PER_SEC;
 
   //printf("Required time: %10.6lf ms\n",tempo*1000);
-
-  printf("\n");
   fclose(f);
 
   destroy_solution(&x);
