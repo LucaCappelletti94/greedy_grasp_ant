@@ -9,7 +9,7 @@ int choice(const double* p, size_t n)
 {
   double rnd = (double)rand() / (double)RAND_MAX;
   int i;
-  for(i=0; i<n && rnd >= p[i]; rnd-=p[i], i++);
+  for(i=0; i<n-1 && rnd >= p[i]; rnd-=p[i], i++);
   return i;
 }
 
@@ -76,5 +76,6 @@ double* exponential_RCL(int** distances, size_t n, size_t max)
 int random_index(int** distances, double* distribution, size_t n)
 {
   int position = choice(distribution, n);
-  return distances[0][position];
+  int distance_index = distances[0][position];
+  return distance_index;
 }

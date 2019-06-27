@@ -22,8 +22,13 @@ int main (int argc, char *argv[])
   time_t inizio, fine;
   double tempo;
 
-
-  parse_command_line(argc,argv,data_file,param,&alpha,&iterTot,&seme);
+  //parse_command_line(argc,argv,data_file,param,&alpha,&iterTot,&seme);
+  strcpy(data_file,argv[1]);
+  double oblivion = strtod(argv[2], NULL);
+  double memory_mu = strtod(argv[3], NULL);
+  double data_mu = strtod(argv[4], NULL);
+  FILE *f = fopen("tmp.csv", "w");
+  fprintf(f, "Heuristic,Score\n");
 
   printf("Data file: %s\n",data_file);
   load_data(data_file,&I);
@@ -34,17 +39,21 @@ int main (int argc, char *argv[])
   printf("Scores:\n");
   inizio = clock();
   create_solution(I.n,&x);
-  greedy(&I,&x);
+  /*greedy(&I,&x);
   printf("\tGreedy: %d\n", x.f);
+  fprintf(f, "Greedy,%d\n", x.f);
   clean_solution(&x);
   greedy_bestsum(&I,&x);
   printf("\tGreedy Bestsum: %d\n", x.f);
+  fprintf(f, "Greedy Bestsum,%d\n", x.f);
   clean_solution(&x);
   greedy_bestpair(&I,&x);
   printf("\tGreedy Bestpair: %d\n", x.f);
+  fprintf(f, "Greedy Bestpair,%d\n", x.f);
   clean_solution(&x);
   greedy_tryall(&I,&x);
   printf("\tGreedy Tryall: %d\n", x.f);
+  fprintf(f, "Greedy Tryall,%d\n", x.f);
 
   float uniform_grasp_score = 0;
   for(int i=0; i<seeds; i++)
@@ -55,6 +64,7 @@ int main (int argc, char *argv[])
     uniform_grasp_score+= (float)x.f/(float)seeds;
   }
   printf("\t[Average] GRASP uniform: %f\n", uniform_grasp_score);
+  fprintf(f, "[Average] GRASP uniform,%f\n", uniform_grasp_score);
 
   float linear_HBSS_grasp_score = 0;
   for(int i=0; i<seeds; i++)
@@ -65,6 +75,7 @@ int main (int argc, char *argv[])
     linear_HBSS_grasp_score+= (float)x.f/(float)seeds;
   }
   printf("\t[Average] GRASP linear HBSS: %f\n", linear_HBSS_grasp_score);
+  fprintf(f, "[Average] GRASP linear HBSS,%f\n", linear_HBSS_grasp_score);
 
   float exponential_HBSS_grasp_score = 0;
   for(int i=0; i<seeds; i++)
@@ -75,6 +86,7 @@ int main (int argc, char *argv[])
     exponential_HBSS_grasp_score+= (float)x.f/(float)seeds;
   }
   printf("\t[Average] GRASP exponential HBSS: %f\n", exponential_HBSS_grasp_score);
+  fprintf(f, "[Average] GRASP exponential HBSS,%f\n", exponential_HBSS_grasp_score);
 
   float linear_RCL_grasp_score = 0;
   for(int i=0; i<seeds; i++)
@@ -85,6 +97,7 @@ int main (int argc, char *argv[])
     linear_RCL_grasp_score+= (float)x.f/(float)seeds;
   }
   printf("\t[Average] GRASP linear RCL (cardinality %d): %f\n", cardinality, linear_RCL_grasp_score);
+  fprintf(f, "[Average] GRASP linear RCL (cardinality %d),%f\n", cardinality, linear_RCL_grasp_score);
 
   float exponential_RCL_grasp_score = 0;
   for(int i=0; i<seeds; i++)
@@ -95,16 +108,18 @@ int main (int argc, char *argv[])
     exponential_RCL_grasp_score+= (float)x.f/(float)seeds;
   }
   printf("\t[Average] GRASP exponential RCL (cardinality %d): %f\n", cardinality, exponential_RCL_grasp_score);
+  fprintf(f, "[Average] GRASP exponential RCL (cardinality %d),%f\n", cardinality, exponential_RCL_grasp_score);*/
 
   float ant_score = 0;
   for(int i=0; i<seeds; i++)
   {
     srand(i);
     clean_solution(&x);
-    ant_system(&I,&x, 100, 0.1, 2, 15);
+    ant_system(&I,&x, 200, oblivion, memory_mu, data_mu);
     ant_score+= (float)x.f/(float)seeds;
   }
   printf("\t[Average] Ant system: %f\n", ant_score);
+  fprintf(f, "[Average] Ant system,%f\n", ant_score);
 
   fine = clock();
   tempo = (double) (fine - inizio) / CLOCKS_PER_SEC;
@@ -112,6 +127,7 @@ int main (int argc, char *argv[])
   printf("Required time: %10.6lf ms\n",tempo*1000);
 
   printf("\n");
+  fclose(f);
 
   destroy_solution(&x);
   destroy_data(&I);
