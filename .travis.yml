@@ -5,8 +5,7 @@ addons:
   sonarcloud:
     organization: "sonarcloud"
     token:
-      secure: "VdCayd4V4wIT+ZKqRzgPDjWA5u+D0dxAGtDoMhzWnA46gVWgMzLI2CRPuUSrvYd2CLU1hdWQe7MRiSULLGhIdVcDFKlOHkf9/yhaLIguHLuae916jkJ3edoO0yMGETRuByogym5+0f0azY3xG7ntTXOH3bGAXIA1u5ZmCJyzZXwKMKp9CJJkM4m8CndxKeTF7vPzHvHsECaHO4u1fTJq83LJFWTiocQGZRTQOcl5iDRGr6+zLL/++g1pVhj8ZxJxi6NMnh0XIwR/R+fngYydi8rHTYerVwIJMpjZvRiKm9QTcM9K7kdJpt73p096fdtCY+6LQnaJ5jF6n/wtiL5OOwBIpror1xCjsWm8OIGIzroFqMkMLbK/IJqEqJGJaMdff984AbrJN4aPD8wHw99FGQzQTlEAeonFOFSe5x+ICU1r6VTLUAweV3pG0K+pAfK9URWOe8JxNoR6DGSt1xuOYfROcbGZvL1lZ/mEfhKVg5r6AoXO5xkQcr9d1Ls/KelpMPVnFFmLCYeEfSV9lyRN0Yqq2RQ9rIyCwP3OsKK9VM6xfS9Yxh9y+/KPBq5OmwBHWrKOZ4WQHwmX73fMSUC3bTs4bc49a94zGIEHcHcrAUSNmp4cxfpwrq8jltcyyeqCC2T3UO7pRK0mPyKSrKqDHJodra2oe9JU0Wk9k7A9CkU="
-
+      secure: "FzkCQIettCvk2ZaHFdC4d21ayE3Xy2wirAuuVhDyNLKtqpfxWmnQJkpqEDG4Gp5DJ5xJTgl4VMZ3LY8ip/Qoibwvp4cJBfVSzlU/QqlFKVcwSL1S3Nr6zuGmDfOQumoyzUPXQtb3YnqBtiA3cAXCbJ3RuIgBM6uQNEB7mxdStAHAXgnnwQP4CiHCw7Vd5TTueD1ATb4RyQTB0Oz4GldXAKWLW/PrC+dJxdWWWeu6ljnE7p2ZbXjCoH0cPOhnw2QyRQsJwIueCNxWFlioFG/6tVhE5C5lopxEnU7Y0wzvDSR9cspZl4tRftiFn9lN7fKdFt9FR6HbQ1vPVGjwxarwaTb3XypSKxdz8tFoJCavzgwG8LeW68utX0io8dEiEhP6nVzhghaUjiiZ7J8pMlRSwRVLxHFcC4wywVFHOvnHMO7s7UZgIBvryHGYhk0ckTOH0uuIsF0bsJQsRbpsWVQTCu1Yh4gMCu5EYOGokeO3wbuu8EjwMxCY6upVZbksP7OftVxZznlSK9YeAyqEXrw+5V/uvqWk9T3cmI/2QQDPFeM8unbZnox+q528AChRW0Aw6gjCA7i01FTFCM9OfBU1x77ujsKaemrTaYRTGxz52D9JVhIfr2tJDGn8EBfBSpgMlCZP3B4NOL4JSuyYVSFOT04Iv7K12U+eGPO2nkjjJ0Q="
 install:
   - travis_retry wget --no-check-certificate https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5-Linux-x86_64.sh
   - sudo mv cmake-3.*.sh /opt
@@ -18,7 +17,9 @@ script:
   - mkdir travis
   - cd travis
   - cmake ..
-  - make
+  - travis_retry wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+  - unzip build-wrapper-linux-x86.zip
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
   - sonar-scanner
 
 cache:
