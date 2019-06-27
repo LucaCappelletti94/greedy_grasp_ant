@@ -11,7 +11,7 @@ install:
   - travis_retry wget --no-check-certificate https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5-Linux-x86_64.sh
   - sudo mv cmake-3.*.sh /opt
   - chmod +x /opt/cmake-3.*.sh
-  - sudo bash /opt/cmake-3.*.sh < "travis_cmake.txt"
+  - sudo bash /opt/cmake-3.*.sh --skip-license
   - sudo ln -s /opt/cmake-3.*your_version*/bin/* /usr/local/bin
 
 script:
