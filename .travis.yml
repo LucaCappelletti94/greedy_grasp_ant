@@ -23,7 +23,7 @@ script:
   - travis_retry wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
   - unzip build-wrapper-linux-x86.zip
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner -Dsonar.projectKey=LucaCappelletti94_greedy_grasp_ant
+  - sonar-scanner
 
 cache:
   directories:
