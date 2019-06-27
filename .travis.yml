@@ -1,11 +1,6 @@
 dist: trusty
 sudo: true
 
-addons:
-  sonarcloud:
-    organization: "sonarcloud"
-    token:
-      secure: "FzkCQIettCvk2ZaHFdC4d21ayE3Xy2wirAuuVhDyNLKtqpfxWmnQJkpqEDG4Gp5DJ5xJTgl4VMZ3LY8ip/Qoibwvp4cJBfVSzlU/QqlFKVcwSL1S3Nr6zuGmDfOQumoyzUPXQtb3YnqBtiA3cAXCbJ3RuIgBM6uQNEB7mxdStAHAXgnnwQP4CiHCw7Vd5TTueD1ATb4RyQTB0Oz4GldXAKWLW/PrC+dJxdWWWeu6ljnE7p2ZbXjCoH0cPOhnw2QyRQsJwIueCNxWFlioFG/6tVhE5C5lopxEnU7Y0wzvDSR9cspZl4tRftiFn9lN7fKdFt9FR6HbQ1vPVGjwxarwaTb3XypSKxdz8tFoJCavzgwG8LeW68utX0io8dEiEhP6nVzhghaUjiiZ7J8pMlRSwRVLxHFcC4wywVFHOvnHMO7s7UZgIBvryHGYhk0ckTOH0uuIsF0bsJQsRbpsWVQTCu1Yh4gMCu5EYOGokeO3wbuu8EjwMxCY6upVZbksP7OftVxZznlSK9YeAyqEXrw+5V/uvqWk9T3cmI/2QQDPFeM8unbZnox+q528AChRW0Aw6gjCA7i01FTFCM9OfBU1x77ujsKaemrTaYRTGxz52D9JVhIfr2tJDGn8EBfBSpgMlCZP3B4NOL4JSuyYVSFOT04Iv7K12U+eGPO2nkjjJ0Q="
 install:
   - travis_retry wget --no-check-certificate https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5-Linux-x86_64.sh
   - sudo mv cmake-3.*.sh /opt
@@ -23,7 +18,6 @@ script:
   - travis_retry wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
   - unzip build-wrapper-linux-x86.zip
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner
 
 cache:
   directories:
