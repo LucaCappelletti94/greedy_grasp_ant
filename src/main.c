@@ -30,13 +30,13 @@ int main (int argc, char *argv[])
   FILE *f = fopen("tmp.csv", "w");
   fprintf(f, "Heuristic,Score\n");
 
-  printf("Data file: %s\n",data_file);
+  //printf("Data file: %s\n",data_file);
   load_data(data_file,&I);
 
   int cardinality = 10;
   int seeds = 10;
 
-  printf("Scores:\n");
+  //printf("Scores:\n");
   inizio = clock();
   create_solution(I.n,&x);
   /*greedy(&I,&x);
@@ -118,13 +118,13 @@ int main (int argc, char *argv[])
     ant_system(&I,&x, 200, oblivion, memory_mu, data_mu);
     ant_score+= (float)x.f/(float)seeds;
   }
-  printf("\t[Average] Ant system: %f\n", ant_score);
+  //printf("\t[Average] Ant system: %f\n", ant_score);
   fprintf(f, "[Average] Ant system,%f\n", ant_score);
 
   fine = clock();
   tempo = (double) (fine - inizio) / CLOCKS_PER_SEC;
 
-  printf("Required time: %10.6lf ms\n",tempo*1000);
+  //printf("Required time: %10.6lf ms\n",tempo*1000);
 
   printf("\n");
   fclose(f);
