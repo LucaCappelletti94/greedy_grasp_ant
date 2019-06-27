@@ -8,9 +8,9 @@
 
 int** alloc_distances(size_t n)
 {
-  int** distances = (int**) malloc(2 * sizeof(int*));
+  int** distances = pint_alloc(2);
   for (int i=0; i<2; i++)
-    distances[i] = (int*) malloc(n * sizeof(int));
+    distances[i] = int_alloc(n);
   return distances;
 }
 

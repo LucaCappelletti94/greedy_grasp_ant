@@ -53,16 +53,10 @@ int best_additional_point (solution_t *px, data_t *pI)
 
 void greedy (data_t *pI, solution_t *px)
 {
-  int i;
   // While the current solution cardinality is less than the maximum allowed
   // as specified in the input file.
   while (px->card_x < pI->k)
-  {
-    // Determine the new best additional point following the current algorithm score function
-    // For greedy, by definition, the best one available is always selected.
-    i = best_additional_point(px,pI);
-    move_point_in(i,px,pI);
-  }
+    move_point_in(best_additional_point(px,pI),px,pI);
 }
 
 void greedy_bestsum (data_t *pI, solution_t *px)

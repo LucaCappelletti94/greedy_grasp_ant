@@ -10,6 +10,11 @@
 // Alloca un vettore di n int
 int *int_alloc (int n);
 
+int **pint_alloc (int n);
+
+// Allocates a vector of n doubles
+double *double_alloc (int n);
+
 // Alloca una matrice di (n1,n2) int
 int **int2_alloc (int n1, int n2);
 

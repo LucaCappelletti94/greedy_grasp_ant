@@ -12,6 +12,17 @@ int *int_alloc (int n)
   return v;
 }
 
+double *double_alloc (int n)
+{
+  double *v = (double *) calloc(n,sizeof(double));
+  if (v == NULL)
+  {
+    fprintf(stderr,"Not enough memory to allocate a vector of %d double!",n);
+    exit(EXIT_FAILURE);
+  }
+  return v;
+}
+
 // Alloca un vettore di n int*
 int **pint_alloc (int n)
 {

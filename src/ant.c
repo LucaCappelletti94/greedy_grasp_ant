@@ -22,14 +22,14 @@ void update_trace(solution_t *Y, double oblivion, double* trace, size_t n)
 }
 
 double* init_trace(size_t n){
-  double* trace = (double*) malloc(n* sizeof(double));
+  double* trace = double_alloc(n);
   for(int i=0; i<n; trace[i]=1.0, i++);
   return trace;
 }
 
 double* ant_distribution(int** distances, double* trace, double mu_memory, double mu_data, size_t n, double (*visibility)(int))
 {
-  double* distribution = (double*) malloc(n* sizeof(double));
+  double* distribution = double_alloc(n);
   double denominator = 0;
   for(int i=0; i<n; i++)
   {

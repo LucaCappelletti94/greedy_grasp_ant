@@ -28,10 +28,7 @@ void grasp(data_t *pI, solution_t *px, size_t max, double* (*get_distribution)(i
   // While the current solution cardinality is less than the maximum allowed
   // as specified in the input file.
   while (px->card_x < pI->k)
-  {
-    // Determine the new best additional point following the current algorithm score function
     move_point_in(random_additional_point(px, pI, max, get_distribution),px,pI);
-  }
 }
 
 void uniform_grasp(data_t *pI, solution_t *px)

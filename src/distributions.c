@@ -15,7 +15,7 @@ int choice(const double* p, size_t n)
 
 double* uniform(int** distances, size_t n, size_t max)
 {
-  double* distribution = (double*) malloc(n* sizeof(double));
+  double* distribution = double_alloc(n);
   for(int i=0; i<n; i++){
     distribution[i] = 1.0/(double)n;
   }
@@ -35,7 +35,7 @@ double exponential_schema(int i, int n)
 double* HBSS(int** distances, int n, double (*schema)(int, int))
 {
   sort_distances(distances, n);
-  double* distribution = (double*) malloc(n* sizeof(double));
+  double* distribution = double_alloc(n);
   for(int i=0; i<n; i++){
     distribution[i] = schema(i, n);
   }
