@@ -6,7 +6,7 @@
 #define GREEDY_GRASP_ANT_DISTRIBUTIONS_H
 
 #include "defs.h"
-#include "math.h"
+#include <math.h>
 #include "distances.h"
 
 int choice(const double* p, size_t n);
