@@ -21,15 +21,16 @@ int multiple_executions(int executions, solution_t *x, data_t *d, void (*algorit
   return (int)round((double)score/(double)executions);
 }
 
-void print_score(FILE *f, char *name, int score)
+void print_score(FILE *f, char *name, int score, int verbose)
 {
-  printf("\t%s: %d\n", name, score);
+  if (verbose)
+    printf("\t%s: %d\n", name, score);
   fprintf(f, "%s,%d\n", name, score);
 }
 
-void run(int executions, solution_t *x, data_t *d, FILE *f, char *name, void (*algorithm)(data_t*, solution_t*))
+void run(int executions, solution_t *x, data_t *d, FILE *f, char *name, int verbose, void (*algorithm)(data_t*, solution_t*))
 {
-  print_score(f, name, multiple_executions(executions, x, d, algorithm));
+  print_score(f, name, multiple_executions(executions, x, d, algorithm), verbose);
 }
 
 int main (int argc, char *argv[])
@@ -40,6 +41,7 @@ int main (int argc, char *argv[])
   time_t start = clock();
   int executions = 10;
   int total_algorithms = 10;
+  int verbose = strtol(argv[3]);
 
   strcpy(data_file,argv[1]);
   FILE *f = fopen(argv[2], "w");
@@ -53,15 +55,20 @@ int main (int argc, char *argv[])
           "Exponential HBSS GRASP", "Linear RCL GRASP", "Exponential RCL GRASP", "Ant System"};
 
   fprintf(f, "Heuristic,Score\n");
-  printf("Data file: %s\n",data_file);
-  printf("Total algorithms: %d.\n", total_algorithms);
-  printf("Score average over %d executions.\n", executions);
+  if (verbose)
+  {
+    printf("Data file: %s\n",data_file);
+    printf("Total algorithms: %d.\n", total_algorithms);
+    printf("Score average over %d executions.\n", executions);
+  }
+
   load_data(data_file,&I);
   create_solution(I.n,&x);
   for (int i=0; i<total_algorithms; i++)
-    run(executions, &x, &I, f, names[i], algorithms[i]);
+    run(executions, &x, &I, f, names[i], verbose, algorithms[i]);
 
-  printf("Required time: %10.6lf ms\n",((double) (clock() - start) / CLOCKS_PER_SEC)*1000);
+  if (verbose)
+    printf("Required time: %10.6lf ms\n",((double) (clock() - start) / CLOCKS_PER_SEC)*1000);
   fclose(f);
 
   destroy_solution(&x);
