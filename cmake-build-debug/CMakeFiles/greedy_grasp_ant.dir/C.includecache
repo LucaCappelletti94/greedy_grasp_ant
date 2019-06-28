@@ -14,6 +14,14 @@ stdlib.h
 defs.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/defs.h
 
+/Users/lucacappelletti/github/greedy_grasp_ant/src/ant.h
+solution.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
+distributions.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/distributions.h
+math.h
+-
+
 /Users/lucacappelletti/github/greedy_grasp_ant/src/data.h
 defs.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/defs.h
@@ -28,12 +36,6 @@ stdlib.h
 string.h
 -
 
-/Users/lucacappelletti/github/greedy_grasp_ant/src/distances.c
-distances.h
-/Users/lucacappelletti/github/greedy_grasp_ant/src/distances.h
-utils.h
-/Users/lucacappelletti/github/greedy_grasp_ant/src/utils.h
-
 /Users/lucacappelletti/github/greedy_grasp_ant/src/distances.h
 stdlib.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/stdlib.h
@@ -44,25 +46,43 @@ data.h
 solution.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
 
-/Users/lucacappelletti/github/greedy_grasp_ant/src/distributions.c
-distributions.h
-/Users/lucacappelletti/github/greedy_grasp_ant/src/distributions.h
-
 /Users/lucacappelletti/github/greedy_grasp_ant/src/distributions.h
 defs.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/defs.h
 math.h
-/Users/lucacappelletti/github/greedy_grasp_ant/src/math.h
+-
 distances.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/distances.h
 
-/Users/lucacappelletti/github/greedy_grasp_ant/src/solution.c
+/Users/lucacappelletti/github/greedy_grasp_ant/src/grasp.h
+distributions.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/distributions.h
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h
+data.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/data.h
 solution.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
+distances.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/distances.h
+
+/Users/lucacappelletti/github/greedy_grasp_ant/src/main.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+math.h
+-
+greedy.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/greedy.h
+grasp.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/grasp.h
+ant.h
+/Users/lucacappelletti/github/greedy_grasp_ant/src/ant.h
 
 /Users/lucacappelletti/github/greedy_grasp_ant/src/solution.h
 data.h
 /Users/lucacappelletti/github/greedy_grasp_ant/src/data.h
-
-/Users/lucacappelletti/github/greedy_grasp_ant/src/utils.h
 

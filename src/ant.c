@@ -73,3 +73,8 @@ void ant_system(data_t *pI, solution_t *px, int iterations, double oblivion, dou
   }
   free(trace);
 }
+
+void parametrized_ant_system(data_t *d, solution_t *x)
+{
+  ant_system(d, x, 200, 0.2, 2, 78);
+}

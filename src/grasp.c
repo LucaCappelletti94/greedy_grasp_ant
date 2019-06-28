@@ -55,3 +55,13 @@ void exponential_RCL_grasp(data_t *pI, solution_t *px, size_t max)
 {
   grasp(pI, px, max, exponential_RCL);
 }
+
+void parametrized_linear_RCL_grasp(data_t *pI, solution_t *px)
+{
+  grasp(pI, px, 10, linear_RCL);
+}
+
+void parametrized_exponential_RCL_grasp(data_t *pI, solution_t *px)
+{
+  grasp(pI, px, 10, exponential_RCL);
+}

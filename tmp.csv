@@ -1,2 +1,11 @@
 Heuristic,Score
-[Average] Ant system,16548.699219
+Greedy,16653
+Greedy bestsum,16679
+Greedy bestpair,16653
+Greedy tryall,16824
+Uniform GRASP,14273
+Linear HBSS GRASP,14937
+Exponential HBSS GRASP,16624
+Linear RCL GRASP,16512
+Exponential RCL GRASP,16624
+Ant System,16588

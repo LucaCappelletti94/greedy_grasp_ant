@@ -9,5 +9,6 @@
 #include <math.h>
 
 void ant_system(data_t *pI, solution_t *px, int iterations, double oblivion, double mu_memory, double mu_data);
+void parametrized_ant_system(data_t *d, solution_t *x);
 
 #endif //GREEDY_GRASP_ANT_ANT_H
