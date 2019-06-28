@@ -1,0 +1,11 @@
+Heuristic,Score
+Greedy,7969
+Greedy bestsum,7958
+Greedy bestpair,7864
+Greedy tryall,7969
+Uniform GRASP,3992
+Linear HBSS GRASP,3997
+Exponential HBSS GRASP,7806
+Linear RCL GRASP,6962
+Exponential RCL GRASP,7806
+Ant System,7969

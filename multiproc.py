@@ -7,9 +7,10 @@ from auto_tqdm import tqdm
 def score(data):
     csv = "{data}.csv".format(data=data)
     subprocess.run([
-        "/Users/lucacappelletti/github/greedy_grasp_ant/linux/greedy_grasp_ant",
+        "./linux/greedy_grasp_ant",
         "data/{data}".format(data=data),
-        csv
+        csv,
+	"0"
     ])
     df = pd.read_csv(csv, index_col=0)
     df.columns = [data]
@@ -18,4 +19,7 @@ def score(data):
 data = os.listdir("data")
 
 with Pool(cpu_count()) as p:
-    list(tqdm(p.imap(score, data), total=len(data)))
+    df = pd.concat(list(tqdm(p.imap(score, data), total=len(data))))
+
+df.to_csv("concat.csv")
+
