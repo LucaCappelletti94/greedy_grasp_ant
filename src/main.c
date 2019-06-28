@@ -41,7 +41,7 @@ int main (int argc, char *argv[])
   time_t start = clock();
   int executions = 10;
   int total_algorithms = 10;
-  int verbose = strtol(argv[3]);
+  int verbose = atoi(argv[3]);
 
   strcpy(data_file,argv[1]);
   FILE *f = fopen(argv[2], "w");
