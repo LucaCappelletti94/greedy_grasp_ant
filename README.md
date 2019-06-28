@@ -1,4 +1,6 @@
 # greedy_grasp_ant
+[![Build Status](https://travis-ci.org/LucaCappelletti94/greedy_grasp_ant.svg?branch=master)](https://travis-ci.org/LucaCappelletti94/greedy_grasp_ant) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3cdaec8507ce46cd961b2885d2ef9d06)](https://www.codacy.com/app/LucaCappelletti94/greedy_grasp_ant?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LucaCappelletti94/greedy_grasp_ant&amp;utm_campaign=Badge_Grade)
+
 Small C project to highlight the similarities of Greedy, GRASP and Ant system algorithms.
 
 ![Normalized min max scores](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scores.png?raw=true)
