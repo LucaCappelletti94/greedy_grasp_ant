@@ -7,14 +7,17 @@ Small C project to highlight the similarities of Greedy, GRASP and Ant system al
 To visualize the scores of the various datasets, scores have been min-max normalized for each dataset column.
 
 ## Building and running the program
-To run the program just run the following, where `{my_dataset}` is a valid dataset under `/data`, such as `01matrizn100m10.dat`:
+To build the program just run the following:
 
 ```bash
 mkdir my_test_dir
 cd my_test_dir
 cmake ..
 make
-greedy_grasp_ant data/{my_dataset}
+```
+Then to run the software just build just execute the following, where `{my_dataset}` is a valid dataset under `/data`, such as `01matrizn100m10.dat`:
+```bash
+./greedy_grasp_ant data/{my_dataset}
 ```
 
 The output will be something of the following fashion:
