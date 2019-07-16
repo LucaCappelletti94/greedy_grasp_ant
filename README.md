@@ -90,3 +90,16 @@ void parametrized_ant_system(data_t *d, solution_t *x)
   ant_system(d, x, 200, 0.2, 2, 78);
 }
 ```
+
+## Repository structure
+The repository is structured as follows:
+
+- [`/data`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/data): contains the project data, as in the weighted graphs on which the varius algorithms can be tested.
+- [`/scores`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/scores): containes the scores obtained by running every algorithm on every available dataset, their summary and heatmap image.
+- [`/scripts`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/scripts)
+	- [`bayes.py`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scripts/bayes.py): python script to execute bayesian optimization of the hyper parameters for the ant system algorithm.
+	- [`multiproc.py`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scripts/multiproc.py): python script to run the program on every available dataset in a parallel fashion.
+	- [`.gaussian_process`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/scripts/.gaussian_process): cache folder for the gaussian process, storing the datapoints and their respective scores already explored by the bayesian optimization.
+- [`/src`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/src): the project itself, containing the code. Detailed explanation of the project structure is available down below.
+
+## Project structure
