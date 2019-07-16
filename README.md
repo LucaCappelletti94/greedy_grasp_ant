@@ -51,7 +51,7 @@ void greedy (data_t *pI, solution_t *px)
 ```
 
 ## GRASP
-The [GRASP algorithm implementation](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/greedy.c) contains multiple implementations for the various distributions:
+The [GRASP algorithm implementation](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/grasp.c) contains multiple implementations for the various distributions:
 
 -   [Uniform](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L16-L23): the algorithm will be a random search.
 -   [HBSS](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L35-L43): weight the solutions probabilities on their quality, following either linear or exponential distribution.
