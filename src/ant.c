@@ -62,19 +62,25 @@ int ant_additional_point (solution_t *px, data_t *pI, double* trace, double mu_m
 void ant_system(data_t *pI, solution_t *px, int iterations, double oblivion, double mu_memory, double mu_data)
 {
   double* trace = init_trace(pI->n);
+  solution_t best;
+  create_solution(px->card_N, &best);
   for(int i=1; i<=iterations; i++){
     // While the current solution cardinality is less than the maximum allowed
     // as specified in the input file.
-    while (px->card_x < pI->k)
+    while (!is_solution_feasible(pI, px))
       move_point_in(ant_additional_point(px, pI, trace, mu_memory, mu_data), px, pI);
-    update_trace(px, oblivion, trace, pI->n);
-    if(i!=iterations)
+    if (best.f < px->f)
+    {
+      copy_solution(px, &best);
       clean_solution(px);
+      update_trace(&best, oblivion, trace, pI->n);
+    }
   }
+  copy_solution(&best, px);
   free(trace);
 }
 
 void parametrized_ant_system(data_t *d, solution_t *x)
 {
-  ant_system(d, x, 200, 0.2, 2, 78);
+  ant_system(d, x, 1000, 0.2, 2, 80);
 }

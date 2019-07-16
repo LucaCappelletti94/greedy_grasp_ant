@@ -55,7 +55,7 @@ void greedy (data_t *pI, solution_t *px)
 {
   // While the current solution cardinality is less than the maximum allowed
   // as specified in the input file.
-  while (px->card_x < pI->k)
+  while (!is_solution_feasible(pI, px))
     move_point_in(best_additional_point(px,pI),px,pI);
 }
 

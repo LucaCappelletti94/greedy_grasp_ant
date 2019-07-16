@@ -5,6 +5,11 @@
 #include "distances.h"
 #include "utils.h"
 
+//
+// The distances are represented by two integer arrays with length n.
+// The first array contains the index of the given point.
+// The second array contains the distance of the given point from the given solution.
+//
 
 int** alloc_distances(size_t n)
 {

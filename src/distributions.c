@@ -13,13 +13,9 @@ int choice(const double* p, size_t n)
   return i;
 }
 
-double* uniform(int** distances, size_t n, size_t max)
+double uniform_schema(int i, int n)
 {
-  double* distribution = double_alloc(n);
-  for(int i=0; i<n; i++){
-    distribution[i] = 1.0/(double)n;
-  }
-  return distribution;
+  return 1.0/(double)(n);
 }
 
 double linear_schema(int i, int n)
@@ -42,16 +38,6 @@ double* HBSS(int** distances, int n, double (*schema)(int, int))
   return distribution;
 }
 
-double* linear_HBSS(int** distances, size_t n, size_t max)
-{
-  return  HBSS(distances, n, linear_schema);
-}
-
-double* exponential_HBSS(int** distances, size_t n, size_t max)
-{
-  return  HBSS(distances, n, exponential_schema);
-}
-
 // Implementation of RCL with cardinality limit
 double* RCL(int** distances, int n, double (*schema)(int, int), int max_n)
 {
@@ -61,6 +47,11 @@ double* RCL(int** distances, int n, double (*schema)(int, int), int max_n)
   for(int i=0; i<max_n; i++)
     distribution[i]/=(1-delta);
   return distribution;
+}
+
+double* uniform_RCL(int** distances, size_t n, size_t max)
+{
+  return  RCL(distances, n, uniform_schema, max);
 }
 
 double* linear_RCL(int** distances, size_t n, size_t max)

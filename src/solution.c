@@ -285,6 +285,11 @@ int solution_around_cardinality(solution_t *px)
   return n;
 }
 
+bool is_solution_feasible(data_t *pI, solution_t *px)
+{
+  return px->card_x == pI->k;
+}
+
 /*
 // Copia in un vettore di interi gli elementi che appartengono alla soluzione
 void dump_soluzione(lista_nodi_t *lista_nodi, soluzione_t * soluzione_dest)

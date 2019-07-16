@@ -23,45 +23,80 @@ int random_additional_point (solution_t *px, data_t *pI, size_t max, double* (*g
   return index;
 }
 
-void grasp(data_t *pI, solution_t *px, size_t max, double* (*get_distribution)(int**, size_t, size_t))
+void grasp(data_t *pI, solution_t *px, int iterations, size_t max, double* (*get_distribution)(int**, size_t, size_t))
 {
-  // While the current solution cardinality is less than the maximum allowed
-  // as specified in the input file.
-  while (px->card_x < pI->k)
-    move_point_in(random_additional_point(px, pI, max, get_distribution),px,pI);
+  solution_t best;
+  create_solution(px->card_N, &best);
+  for(int i=1; i<=iterations; i++) {
+    // While the current solution cardinality is less than the maximum allowed
+    // as specified in the input file.
+    while (!is_solution_feasible(pI, px))
+      move_point_in(random_additional_point(px, pI, max, get_distribution), px, pI);
+    if (best.f < px->f) {
+      copy_solution(px, &best);
+      clean_solution(px);
+    }
+  }
+  copy_solution(&best, px);
 }
 
-void uniform_grasp(data_t *pI, solution_t *px)
+void uniform_RCL_grasp(data_t *pI, solution_t *px, int iterations, size_t max)
 {
-  grasp(pI, px, 0, uniform);
+  grasp(pI, px, iterations, max, uniform_RCL);
 }
 
-void linear_HBSS_grasp(data_t *pI, solution_t *px)
+void linear_RCL_grasp(data_t *pI, solution_t *px, int iterations, size_t max)
 {
-  grasp(pI, px, 0, linear_HBSS);
+  grasp(pI, px, iterations, max, linear_RCL);
 }
 
-void exponential_HBSS_grasp(data_t *pI, solution_t *px)
+void exponential_RCL_grasp(data_t *pI, solution_t *px, int iterations, size_t max)
 {
-  grasp(pI, px, 0, exponential_HBSS);
+  grasp(pI, px, iterations, max, exponential_RCL);
 }
 
-void linear_RCL_grasp(data_t *pI, solution_t *px, size_t max)
+void uniform_grasp(data_t *pI, solution_t *px, int iterations)
 {
-  grasp(pI, px, max, linear_RCL);
+  uniform_RCL_grasp(pI, px, iterations, solution_around_cardinality(px));
 }
 
-void exponential_RCL_grasp(data_t *pI, solution_t *px, size_t max)
+void linear_HBSS_grasp(data_t *pI, solution_t *px, int iterations)
 {
-  grasp(pI, px, max, exponential_RCL);
+  linear_RCL_grasp(pI, px, iterations, solution_around_cardinality(px));
+}
+
+void exponential_HBSS_grasp(data_t *pI, solution_t *px, int iterations)
+{
+  exponential_RCL_grasp(pI, px, iterations, solution_around_cardinality(px));
+}
+
+void parametrized_uniform_grasp(data_t *pI, solution_t *px)
+{
+  uniform_grasp(pI, px, 1000);
+}
+
+void parametrized_linear_HBSS_grasp(data_t *pI, solution_t *px)
+{
+  linear_HBSS_grasp(pI, px, 1000);
+}
+
+void parametrized_exponential_HBSS_grasp(data_t *pI, solution_t *px)
+{
+  exponential_HBSS_grasp(pI, px, 1000);
+}
+
+
+void parametrized_uniform_RCL_grasp(data_t *pI, solution_t *px)
+{
+  uniform_RCL_grasp(pI, px, 1000, 10);
 }
 
 void parametrized_linear_RCL_grasp(data_t *pI, solution_t *px)
 {
-  grasp(pI, px, 10, linear_RCL);
+  linear_RCL_grasp(pI, px, 1000, 10);
 }
 
 void parametrized_exponential_RCL_grasp(data_t *pI, solution_t *px)
 {
-  grasp(pI, px, 10, exponential_RCL);
+  exponential_RCL_grasp(pI, px, 1000, 10);
 }

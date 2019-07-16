@@ -38,17 +38,21 @@ int main (int argc, char *argv[])
   solution_t x;
   time_t start = clock();
   int executions = 10;
-  int total_algorithms = 10;
+  int total_algorithms = 11;
 
   strcpy(data_file,argv[1]);
   void (*algorithms[])(data_t*, solution_t*) = {
-          greedy, greedy_bestsum, greedy_bestpair, greedy_tryall, uniform_grasp, linear_HBSS_grasp,
-          exponential_HBSS_grasp, parametrized_linear_RCL_grasp, parametrized_exponential_RCL_grasp,
+          greedy, greedy_bestsum, greedy_bestpair, greedy_tryall,
+          parametrized_uniform_grasp, parametrized_linear_HBSS_grasp, parametrized_exponential_HBSS_grasp,
+          parametrized_uniform_RCL_grasp, parametrized_linear_RCL_grasp, parametrized_exponential_RCL_grasp,
           parametrized_ant_system
   };
   char *names[] = {
-          "Greedy", "Greedy bestsum", "Greedy bestpair", "Greedy tryall", "Uniform GRASP", "Linear HBSS GRASP",
-          "Exponential HBSS GRASP", "Linear RCL GRASP", "Exponential RCL GRASP", "Ant System"};
+          "Greedy", "Greedy bestsum", "Greedy bestpair", "Greedy tryall",
+          "Uniform GRASP", "Linear HBSS GRASP", "Exponential HBSS GRASP",
+          "Uniform RCL GRASP", "Linear RCL GRASP", "Exponential RCL GRASP",
+          "Ant System"
+  };
 
   printf("Data file: %s\n",data_file);
   printf("Total algorithms: %d.\n", total_algorithms);

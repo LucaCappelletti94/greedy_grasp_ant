@@ -91,4 +91,6 @@ void print_solution (solution_t *px);
 
 int solution_around_cardinality(solution_t *px);
 
+bool is_solution_feasible(data_t *pI, solution_t *px);
+
 #endif /* __SOLUTION_H */

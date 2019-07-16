@@ -8,3 +8,5 @@ sonar\.yml
 \.ipynb_checkpoints/
 
 \.idea/
+
+cmake-build-debug/
