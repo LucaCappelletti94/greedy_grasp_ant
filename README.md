@@ -7,14 +7,17 @@ Small C project to highlight the similarities of Greedy, GRASP and Ant system al
 To visualize the scores of the various datasets, scores have been min-max normalized for each dataset column.
 
 ## Building and running the program
-To run the program just run the following, where `{my_dataset}` is a valid dataset under `/data`, such as `01matrizn100m10.dat`:
+To build the program just run the following:
 
 ```bash
 mkdir my_test_dir
 cd my_test_dir
 cmake ..
 make
-greedy_grasp_ant data/{my_dataset}
+```
+Then to run the software just build just execute the following, where `{my_dataset}` is a valid dataset under `/data`, such as `01matrizn100m10.dat`:
+```bash
+./greedy_grasp_ant data/{my_dataset}
 ```
 
 The output will be something of the following fashion:
@@ -48,7 +51,7 @@ void greedy (data_t *pI, solution_t *px)
 ```
 
 ## GRASP
-The [GRASP algorithm implementation](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/greedy.c) contains multiple implementations for the various distributions:
+The [GRASP algorithm implementation](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/grasp.c) contains multiple implementations for the various distributions:
 
 -   [Uniform](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L16-L23): the algorithm will be a random search.
 -   [HBSS](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L35-L43): weight the solutions probabilities on their quality, following either linear or exponential distribution.
