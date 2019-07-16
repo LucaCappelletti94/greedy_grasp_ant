@@ -6,3 +6,5 @@ sonar\.yml
 \.idea/workspace\.xml
 
 \.ipynb_checkpoints/
+
+\.idea/
