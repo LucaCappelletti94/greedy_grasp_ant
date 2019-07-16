@@ -6,7 +6,7 @@ Small C project to highlight the similarities of Greedy, GRASP and Ant system al
 ![Normalized min max scores](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scores.png?raw=true)
 To visualize the scores of the various datasets, scores have been min-max normalized for each dataset column.
 
-## Running the algorithm
+## Building and running the program
 To run the program just run the following, where `{my_dataset}` is a valid dataset under `/data`, such as `01matrizn100m10.dat`:
 
 ```bash
@@ -50,9 +50,9 @@ void greedy (data_t *pI, solution_t *px)
 ## GRASP
 The [GRASP algorithm implementation](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/greedy.c) contains multiple implementations for the various distributions:
 
-- Uniform: the algorithm will be a random search.
-- HBSS: weight the solutions probabilities on their quality, following either linear or exponential distribution.
-- RCL: like HBSS, but with a cardinality limit. The solutions above the given cardinality get probability zero.
+- [Uniform](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L16-L23): the algorithm will be a random search.
+- [HBSS](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L35-L43): weight the solutions probabilities on their quality, following either linear or exponential distribution.
+- [RCL](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L56-L64): like HBSS, but with a cardinality limit. The solutions above the given cardinality get probability zero.
 
 ```c
 void grasp(data_t *pI, solution_t *px, size_t max, double* (*get_distribution)(int**, size_t, size_t))
@@ -82,7 +82,7 @@ void ant_system(data_t *pI, solution_t *px, int iterations, double oblivion, dou
 }
 ```
 
-Using a [Gaussian process](https://github.com/LucaCappelletti94/gaussian_process) for tuning the `oblivion`, `mu_memory` and `mu_data` parameters for over `1000` iterations a peculiar result was obtained: the best parameters where those, in the context of the dataset `14matrizn400m80.dat`, which make the ant system behave more closely to a greedy algorithm.
+Using a [Gaussian process](https://github.com/LucaCappelletti94/gaussian_process) ([script implementation here](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scripts/bayes.py)) for tuning the `oblivion`, `mu_memory` and `mu_data` parameters for a `1000` iterations a peculiar result was obtained: the best parameters where those, in the context of the dataset `14matrizn400m80.dat`, which make the ant system behave more closely to a greedy algorithm.
 
 ```c
 void parametrized_ant_system(data_t *d, solution_t *x)
