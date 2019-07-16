@@ -1,10 +1,8 @@
-import os
 import pandas as pd
 import subprocess
 from gaussian_process import Space, GaussianProcess, TQDMGaussianProcess
 from multiprocessing import cpu_count
 from notipy_me import Notipy
-import json
 
 def score(oblivion:float, memory_mu:float, data_mu:float):
     data = "14matrizn400m80.dat"
