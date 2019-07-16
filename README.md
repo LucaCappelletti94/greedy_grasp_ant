@@ -3,7 +3,7 @@
 
 Small C project to highlight the similarities of Greedy, GRASP and Ant system algorithms.
 
-![Normalized min max scores](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scores.png?raw=true)
+![Normalized min max scores](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scores/scores.png?raw=true)
 To visualize the scores of the various datasets, scores have been min-max normalized for each dataset column.
 
 ## Building and running the program
