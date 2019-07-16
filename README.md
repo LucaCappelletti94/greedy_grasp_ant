@@ -100,6 +100,22 @@ The repository is structured as follows:
 	- [`bayes.py`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scripts/bayes.py): python script to execute bayesian optimization of the hyper parameters for the ant system algorithm.
 	- [`multiproc.py`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scripts/multiproc.py): python script to run the program on every available dataset in a parallel fashion.
 	- [`.gaussian_process`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/scripts/.gaussian_process): cache folder for the gaussian process, storing the datapoints and their respective scores already explored by the bayesian optimization.
-- [`/src`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/src): the project itself, containing the code. Detailed explanation of the project structure is available down below.
+- [`/src`](https://github.com/LucaCappelletti94/greedy_grasp_ant/tree/master/src): the project itself, containing the source code. Detailed explanation of the project structure is [available down below](https://github.com/LucaCappelletti94/greedy_grasp_ant#project-structure).
+- [`/.gitignore`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/.gitignore): git settings file for avoiding to upload unwanted files.
+- [`/.travis.yml`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/.travis.yml): travis settings file for automated build testing and evaluation.
+- [`/CMakeLists.txt`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/CMakeLists.txt): cmake settings file for meta-building the project and creating a make file for actually building it. [Instruction for building the program are available here](https://github.com/LucaCappelletti94/greedy_grasp_ant#building-and-running-the-program).
+- [`/README.md`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/README.md): markdown file containing a short project description.
 
 ## Project structure
+The [project source code](https://github.com/LucaCappelletti94/greedy_grasp_ant) is structured as follows:
+
+- [`/src/alloc.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/alloc.c): functions for allocating various types of multi-dimensions vectors.
+- [`/src/data.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/data.c): functions for loading, visualizing and destroying the dataset.
+- [`/src/utils.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/utils.c): utilities.
+- [`/src/distances.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/distances.c): functions for alocating the distances vectors, calculating them given a solution and the available points and destroying them.
+- [`/src/solution.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/solution.c): functions for allocating, updating and destroying solutions.
+- [`/src/distributions.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/distributions.c): functions for allocating stocastic vectors and calculating distributions given distances scores.
+- [`/src/greedy.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/greedy.c): implementation of Greedy.
+- [`/src/grasp.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/grasp.c): implementation of GRASP.
+- [`/src/ant.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/ant.c): implementation of ant system.
+- [`/src/main.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/main.c): main of the program, which executes every available algorithm on the given data.
