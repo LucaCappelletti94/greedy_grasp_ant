@@ -80,7 +80,7 @@ The [greedy algorithm implementation](https://github.com/LucaCappelletti94/greed
 ```c
 void greedy (data_t *pI, solution_t *px)
 {
-  while (px->card_x < pI->k)
+  while (!is_solution_feasible(pI, px))
     move_point_in(best_additional_point(px,pI),px,pI);
 }
 ```
@@ -98,8 +98,6 @@ void grasp(data_t *pI, solution_t *px, int iterations, size_t max, double* (*get
   solution_t best;
   create_solution(px->card_N, &best);
   for(int i=1; i<=iterations; i++) {
-    // While the current solution cardinality is less than the maximum allowed
-    // as specified in the input file.
     while (!is_solution_feasible(pI, px))
       move_point_in(random_additional_point(px, pI, max, get_distribution), px, pI);
     if (best.f < px->f) {
@@ -123,8 +121,6 @@ void ant_system(data_t *pI, solution_t *px, int iterations, double oblivion, dou
   solution_t best;
   create_solution(px->card_N, &best);
   for(int i=1; i<=iterations; i++){
-    // While the current solution cardinality is less than the maximum allowed
-    // as specified in the input file.
     while (!is_solution_feasible(pI, px))
       move_point_in(ant_additional_point(px, pI, trace, mu_memory, mu_data), px, pI);
     if (best.f < px->f)
