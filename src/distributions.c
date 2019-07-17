@@ -41,6 +41,9 @@ double* HBSS(int** distances, int n, double (*schema)(int, int))
 // Implementation of RCL with cardinality limit
 double* RCL(int** distances, int n, double (*schema)(int, int), int max_n)
 {
+  if (max_n > n) {
+    max_n = n-1;
+  }
   double* distribution = HBSS(distances, n, schema);
   double delta = 0;
   for(int i=max_n; i<n; delta+=distribution[i], distribution[i] = 0, i++);

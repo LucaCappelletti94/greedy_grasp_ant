@@ -69,34 +69,3 @@ void exponential_HBSS_grasp(data_t *pI, solution_t *px, int iterations)
 {
   exponential_RCL_grasp(pI, px, iterations, solution_around_cardinality(px));
 }
-
-void parametrized_uniform_grasp(data_t *pI, solution_t *px)
-{
-  uniform_grasp(pI, px, 1000);
-}
-
-void parametrized_linear_HBSS_grasp(data_t *pI, solution_t *px)
-{
-  linear_HBSS_grasp(pI, px, 1000);
-}
-
-void parametrized_exponential_HBSS_grasp(data_t *pI, solution_t *px)
-{
-  exponential_HBSS_grasp(pI, px, 1000);
-}
-
-
-void parametrized_uniform_RCL_grasp(data_t *pI, solution_t *px)
-{
-  uniform_RCL_grasp(pI, px, 1000, 10);
-}
-
-void parametrized_linear_RCL_grasp(data_t *pI, solution_t *px)
-{
-  linear_RCL_grasp(pI, px, 1000, 10);
-}
-
-void parametrized_exponential_RCL_grasp(data_t *pI, solution_t *px)
-{
-  exponential_RCL_grasp(pI, px, 1000, 10);
-}

@@ -17,26 +17,61 @@ make
 ```
 Then to run the software just build just execute the following, where `{my_dataset}` is a valid dataset under `/data`, such as `01matrizn100m10.dat`:
 ```bash
-./greedy_grasp_ant data/{my_dataset}
+./greedy_grasp_ant --data={my_dataset} --all --verbose
 ```
 
 The output will be something of the following fashion:
 
 ```plain
-Data file: data/14matrizn400m80.dat
-Total algorithms: 10.
+Data file: ../data/01matrizn100m10.dat
 Score average over 10 executions.
-	Greedy: 16653
-	Greedy bestsum: 16679
-	Greedy bestpair: 16653
-	Greedy tryall: 16824
-	Uniform GRASP: 14273
-	Linear HBSS GRASP: 14937
-	Exponential HBSS GRASP: 16624
-	Linear RCL GRASP: 16512
-	Exponential RCL GRASP: 16624
-	Ant System: 16588
-Required time: 95895.153000 ms
+greedy: 306
+greedy_bestsum: 322
+greedy_bestpair: 306
+greedy_tryall: 333
+uniform_grasp: 
+	mean: 211
+	std: 14
+	var: 220
+	min: 191
+	max: 237
+linear_HBSS_grasp: 
+	mean: 245
+	std: 11
+	var: 141
+	min: 217
+	max: 260
+exponential_HBSS_grasp: 
+	mean: 312
+	std: 4
+	var: 16
+	min: 306
+	max: 319
+uniform_RCL_grasp: 
+	mean: 287
+	std: 5
+	var: 28
+	min: 278
+	max: 295
+linear_RCL_grasp: 
+	mean: 289
+	std: 8
+	var: 72
+	min: 277
+	max: 308
+exponential_RCL_grasp: 
+	mean: 311
+	std: 5
+	var: 29
+	min: 303
+	max: 319
+ant_system: 
+	mean: 255
+	std: 9
+	var: 95
+	min: 241
+	max: 275
+Required time: 102.841000 ms
 ```
 
 ## Greedy
@@ -58,10 +93,21 @@ The [GRASP algorithm implementation](https://github.com/LucaCappelletti94/greedy
 -   [RCL](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/53df14aa325d75fd5270075b2880834c8a6c5901/src/distributions.c#L56-L64): like HBSS, but with a cardinality limit. The solutions above the given cardinality get probability zero.
 
 ```c
-void grasp(data_t *pI, solution_t *px, size_t max, double* (*get_distribution)(int**, size_t, size_t))
+void grasp(data_t *pI, solution_t *px, int iterations, size_t max, double* (*get_distribution)(int**, size_t, size_t))
 {
-  while (px->card_x < pI->k)
-    move_point_in(random_additional_point(px, pI, max, get_distribution),px,pI);
+  solution_t best;
+  create_solution(px->card_N, &best);
+  for(int i=1; i<=iterations; i++) {
+    // While the current solution cardinality is less than the maximum allowed
+    // as specified in the input file.
+    while (!is_solution_feasible(pI, px))
+      move_point_in(random_additional_point(px, pI, max, get_distribution), px, pI);
+    if (best.f < px->f) {
+      copy_solution(px, &best);
+      clean_solution(px);
+    }
+  }
+  copy_solution(&best, px);
 }
 ```
 
@@ -74,23 +120,22 @@ Finally, the [Ant System Algorithm implementation](https://github.com/LucaCappel
 void ant_system(data_t *pI, solution_t *px, int iterations, double oblivion, double mu_memory, double mu_data)
 {
   double* trace = init_trace(pI->n);
+  solution_t best;
+  create_solution(px->card_N, &best);
   for(int i=1; i<=iterations; i++){
-    while (px->card_x < pI->k)
+    // While the current solution cardinality is less than the maximum allowed
+    // as specified in the input file.
+    while (!is_solution_feasible(pI, px))
       move_point_in(ant_additional_point(px, pI, trace, mu_memory, mu_data), px, pI);
-    update_trace(px, oblivion, trace, pI->n);
-    if(i!=iterations)
+    if (best.f < px->f)
+    {
+      copy_solution(px, &best);
       clean_solution(px);
+      update_trace(&best, oblivion, trace, pI->n);
+    }
   }
+  copy_solution(&best, px);
   free(trace);
-}
-```
-
-Using a [Gaussian process](https://github.com/LucaCappelletti94/gaussian_process) ([script implementation here](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scripts/bayes.py)) for tuning the `oblivion`, `mu_memory` and `mu_data` parameters for a `1000` iterations a peculiar result was obtained: the best parameters where those, in the context of the dataset `14matrizn400m80.dat`, which make the ant system behave more closely to a greedy algorithm.
-
-```c
-void parametrized_ant_system(data_t *d, solution_t *x)
-{
-  ant_system(d, x, 200, 0.2, 2, 78);
 }
 ```
 
@@ -122,3 +167,104 @@ The [project source code](https://github.com/LucaCappelletti94/greedy_grasp_ant)
 -   [`/src/grasp.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/grasp.c): implementation of GRASP.
 -   [`/src/ant.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/ant.c): implementation of ant system.
 -   [`/src/main.c`](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/src/main.c): main of the program, which executes every available algorithm on the given data.
+
+
+## Available options
+There are a number of available options.
+
+### Required options
+The only required options are the data file path and at least an implementation. The available implementations are listed below, and the data file path can be specified as follows:
+
+```bash
+--data={my_dataset} --{any_available_implementation}
+```
+
+or alternatively:
+
+```bash
+--data {my_dataset} --{any_available_implementation}
+```
+
+### Available implementations
+To run one or more implementations, just pass the corresponding options. The available options are:
+
+-   `--greedy`
+-   `--greedy_bestsum`
+-   `--greedy_bestpair`
+-   `--greedy_tryall`
+-   `--uniform_grasp`
+-   `--linear_HBSS_grasp`
+-   `--exponential_HBSS_grasp`
+-   `--uniform_RCL_grasp`
+-   `--linear_RCL_grasp`
+-   `--exponential_RCL_grasp`
+-   `--ant_system`
+
+To run **every** available implementation pass only the option `--all`.
+
+### Custom parameters
+For every parameters used there is a default parameter but also the possibility to pass the value by option. Here's the available options for setting the parameters:
+
+-   `--executions`: number of the test executions (integer).
+-   `--iterations`: number of iterations for grasp and ant (integer).
+-   `--rcl_max`: maximum number of elements to consider in RCL (integer).
+-   `--mu_memory`: trace coefficient for ant (integer).
+-   `--mu_data`: data coefficient for ant (integer).
+-   `--oblivion`: trace oblivion coefficient for ant (double).
+  
+Every parameter is used like `data`, as follows:
+
+```bash
+--{parameter}={parameter_value}
+```
+
+or equivalently:
+
+```bash
+--{parameter} {parameter_value}
+```
+
+### Utilities related options
+Two utilities are available:
+
+#### Verbose    
+When specified as `--verbose`, verbose prints output to stdout, otherwise it will remain muted.
+
+#### Log
+When specified as `--log={csv_log_file}`, the scripts results will be logged to `csv_log_file` in csv file format.
+
+## Multiprocess bayesian tuning for ant-system hyper-parameters
+Using a [Gaussian process](https://github.com/LucaCappelletti94/gaussian_process) ([script implementation here](https://github.com/LucaCappelletti94/greedy_grasp_ant/blob/master/scripts/bayes.py)) we can tune the `oblivion`, `mu_memory` and `mu_data` parameters for the ant-system as follows.
+
+First we build the project:
+
+```bash
+mkdir gga
+cd gga
+cmake ..
+make
+cd ..
+```
+
+Then we install the required python packages:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+and finally we run the gaussian process:
+
+```bash
+python scripts/bayes.py
+```
+
+Other than printing the best parameters at the end, they will also be saved in the `best_parameters.json` file.
+
+## Multiprocess implementations scores determination
+After having built the project and installed the python requirements, as explained the gaussian process section, we can run the following:
+
+```bash
+python scripts/multiproc.py
+```
+
+The cumulative results will be stores in `scores/all_scores.csv` and the single files will be stored in `scores`.

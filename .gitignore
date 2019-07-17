@@ -10,3 +10,5 @@ sonar\.yml
 \.idea/
 
 cmake-build-debug/
+
+log\.csv

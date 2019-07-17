@@ -7,11 +7,11 @@
 
 #include "distributions.h"
 
-void parametrized_uniform_grasp(data_t *pI, solution_t *px);
-void parametrized_linear_HBSS_grasp(data_t *pI, solution_t *px);
-void parametrized_exponential_HBSS_grasp(data_t *pI, solution_t *px);
-void parametrized_uniform_RCL_grasp(data_t *pI, solution_t *px);
-void parametrized_linear_RCL_grasp(data_t *pI, solution_t *px);
-void parametrized_exponential_RCL_grasp(data_t *pI, solution_t *px);
+void uniform_grasp(data_t *pI, solution_t *px, int iterations);
+void linear_HBSS_grasp(data_t *pI, solution_t *px, int iterations);
+void exponential_HBSS_grasp(data_t *pI, solution_t *px, int iterations);
+void uniform_RCL_grasp(data_t *pI, solution_t *px, int iterations, size_t max);
+void linear_RCL_grasp(data_t *pI, solution_t *px, int iterations, size_t max);
+void exponential_RCL_grasp(data_t *pI, solution_t *px, int iterations, size_t max);
 
 #endif //GREEDY_GRASP_ANT_GRASP_H
