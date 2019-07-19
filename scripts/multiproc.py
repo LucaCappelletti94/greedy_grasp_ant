@@ -3,6 +3,7 @@ import pandas as pd
 import subprocess
 from multiprocessing import cpu_count, Pool
 from auto_tqdm import tqdm
+from notipy_me import Notipy
 
 def score(data):
     csv = "scores/{data}.csv".format(data=data)
@@ -18,8 +19,9 @@ def score(data):
 
 data = os.listdir("data")
 
-with Pool(cpu_count()) as p:
-    df = pd.concat(list(tqdm(p.imap(score, data), total=len(data))))
+with Notipy():
+    with Pool(cpu_count()) as p:
+        df = pd.concat(list(tqdm(p.imap(score, data), total=len(data))))
 
 df.to_csv("scores/all_scores.csv")
 
