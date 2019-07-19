@@ -12,7 +12,7 @@ def score(data):
         "--log={csv}".format(csv=csv),
         "--all"
     ])
-    df = pd.read_csv(csv, index_col=0)
+    df = pd.read_csv(csv, index_col=0)[["mean"]]
     df.columns = [data]
     return df.T
 
