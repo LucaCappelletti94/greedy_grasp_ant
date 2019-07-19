@@ -8,13 +8,13 @@ from skopt.callbacks import DeltaYStopper
 
 def score(oblivion:float, mu_memory:float, mu_data:float):
     data = "14matrizn400m80.dat"
-    filename = "{random}.csv".format(
+    filename = "data/{random}.csv".format(
         random=randint(0, 10000000000)
     )
     subprocess.run([
         "./gga/greedy_grasp_ant",
         "--log={filename}".format(filename=filename),
-        "--data=data/{data}".format(data=data),
+        "--data={data}".format(data=data),
         "--oblivion={oblivion}".format(
             oblivion=oblivion
         ),
