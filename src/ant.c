@@ -69,13 +69,12 @@ void ant_system(data_t *pI, solution_t *px, int iterations, double oblivion, dou
     // as specified in the input file.
     while (!is_solution_feasible(pI, px))
       move_point_in(ant_additional_point(px, pI, trace, mu_memory, mu_data), px, pI);
-    //if (best.f < px->f)
-    //{
-    copy_solution(px, &best);
-    clean_solution(px);
-    update_trace(&best, oblivion, trace, pI->n);
-    //}
-
+    if (best.f < px->f)
+    {
+      copy_solution(px, &best);
+      clean_solution(px);
+      update_trace(&best, oblivion, trace, pI->n);
+    }
   }
   copy_solution(&best, px);
   free(trace);
