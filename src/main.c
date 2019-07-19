@@ -30,8 +30,8 @@ int main (int argc, char *argv[])
   FILE *fp = NULL;
   char ch;
   int * scores;
-  int executions=10, iterations=500, rcl_max=10, mu_memory=5, mu_data=5, verbose = 0;
-  double oblivion=0.1;
+  int executions=10, iterations=1000, rcl_max=10, mu_memory=5, mu_data=5, verbose = 0;
+  double oblivion=1;
   int greedy_flag, greedy_bestsum_flag, greedy_bestpair_flag, greedy_tryall_flag, uniform_grasp_flag,
        linear_HBSS_grasp_flag, exponential_HBSS_grasp_flag, uniform_RCL_grasp_flag, linear_RCL_grasp_flag,
        exponential_RCL_grasp_flag, ant_system_flag, all_flag;
@@ -43,11 +43,11 @@ int main (int argc, char *argv[])
   struct option long_options[] = {
       {"data", required_argument, NULL, 'd'},
       {"log", required_argument, NULL, 'l'},
-      {"executions", required_argument, &executions, 0},
-      {"iterations", required_argument, &iterations, 0},
-      {"rcl_max", required_argument, &rcl_max, 0},
-      {"mu_memory", required_argument, &mu_memory, 0},
-      {"mu_data", required_argument, &mu_data, 0},
+      {"executions", required_argument, NULL, 'e'},
+      {"iterations", required_argument, NULL, 'i'},
+      {"rcl_max", required_argument, NULL, 'm'},
+      {"mu_memory", required_argument, NULL, 'u'},
+      {"mu_data", required_argument, NULL, 0},
       {"oblivion", required_argument, NULL, 'o'},
       {"verbose", no_argument, &verbose, 1},
       {"greedy", no_argument, &greedy_flag, 1},
@@ -73,6 +73,21 @@ int main (int argc, char *argv[])
     {
       case 'd':
         strcpy(data_file, optarg);
+        break;
+      case 'e':
+        executions=atoi(optarg);
+        break;
+      case 'i':
+        iterations=atoi(optarg);
+        break;
+      case 'm':
+        rcl_max=atoi(optarg);
+        break;
+      case 'u':
+        mu_memory=atoi(optarg);
+        break;
+      case 'a':
+        mu_data=atoi(optarg);
         break;
       case 'l':
         fp = fopen(optarg, "w+");

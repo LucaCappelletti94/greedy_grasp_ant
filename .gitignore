@@ -12,3 +12,11 @@ sonar\.yml
 cmake-build-debug/
 
 log\.csv
+
+gga/
+
+logs/
+
+\.notipy\.json
+
+best_parameters\.json
