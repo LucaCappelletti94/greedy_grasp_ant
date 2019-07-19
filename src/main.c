@@ -30,8 +30,8 @@ int main (int argc, char *argv[])
   FILE *fp = NULL;
   char ch;
   int * scores;
-  int executions=10, iterations=1000, rcl_max=10, mu_memory=5, mu_data=5, verbose = 0;
-  double oblivion=0.2;
+  int executions=10, iterations=1000, rcl_max=10, mu_memory=2, mu_data=5, verbose = 0;
+  double oblivion=0.6;
   int greedy_flag, greedy_bestsum_flag, greedy_bestpair_flag, greedy_tryall_flag, uniform_grasp_flag,
        linear_HBSS_grasp_flag, exponential_HBSS_grasp_flag, uniform_RCL_grasp_flag, linear_RCL_grasp_flag,
        exponential_RCL_grasp_flag, ant_system_flag, all_flag;
