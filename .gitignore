@@ -20,3 +20,5 @@ logs/
 \.notipy\.json
 
 best_parameters\.json
+
+\.gaussian_process/
