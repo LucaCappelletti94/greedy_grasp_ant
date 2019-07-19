@@ -1,0 +1,12 @@
+name,mean,std,var,min,max
+greedy,2628,0,0,2628,2628
+greedy_bestsum,2616,0,0,2616,2616
+greedy_bestpair,2628,0,0,2628,2628
+greedy_tryall,2676,0,0,2676,2676
+uniform_grasp,2005,24,594,1967,2055
+linear_HBSS_grasp,2176,21,483,2140,2218
+exponential_HBSS_grasp,2618,18,335,2591,2640
+uniform_RCL_grasp,2559,13,185,2532,2574
+linear_RCL_grasp,2563,17,289,2532,2592
+exponential_RCL_grasp,2607,18,348,2583,2651
+ant_system,2174,45,2072,2136,2278
