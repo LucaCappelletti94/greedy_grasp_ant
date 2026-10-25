@@ -1,8 +1,6 @@
 
 \.DS_Store
 
-sonar\.yml
-
 \.idea/workspace\.xml
 
 \.ipynb_checkpoints/

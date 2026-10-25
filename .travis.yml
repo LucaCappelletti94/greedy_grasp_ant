@@ -13,7 +13,3 @@ script:
   - cd travis
   - cmake ..
   - make clean all
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
